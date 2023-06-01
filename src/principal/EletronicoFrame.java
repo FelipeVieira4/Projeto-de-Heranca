@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Eletronico extends JFrame {
+public class EletronicoFrame extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -28,7 +28,7 @@ public class Eletronico extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Eletronico frame = new Eletronico();
+					EletronicoFrame frame = new EletronicoFrame();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +40,7 @@ public class Eletronico extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Eletronico() {
+	public EletronicoFrame() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -95,7 +95,7 @@ public class Eletronico extends JFrame {
 				
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\felipe_vieira4\\Documents\\GitHub\\Trabalho_Sobre_Heranca\\rsc\\ok_logo.png"));
+		btnNewButton.setIcon(new ImageIcon("rsc/ok_logo.png"));
 		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 15));
 		btnNewButton.setBounds(347, 18, 77, 69);
 		contentPane.add(btnNewButton);

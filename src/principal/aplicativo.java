@@ -1,13 +1,10 @@
 package principal;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
+import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextPane;
-import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -15,11 +12,14 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
-import javax.swing.JTextArea;
-import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 
 public class aplicativo extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
 	
@@ -59,31 +59,43 @@ public class aplicativo extends JFrame {
 		tabbedPane_1.setBounds(0, 0, 434, 261);
 		contentPane.add(tabbedPane_1);
 		
-		JPanel panel = new JPanel();
-		tabbedPane_1.addTab("Eletronico", null, panel, null);
-		panel.setLayout(null);
+		JPanel Adicionar = new JPanel();
+		tabbedPane_1.addTab("Eletronico", null, Adicionar, null);
+		Adicionar.setLayout(null);
 		
-		JButton openJanelaEletronico = new JButton("New button");
-		openJanelaEletronico.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Eletronico test = new Eletronico();
-				test.setVisible(true);
-			}
-		});
-		openJanelaEletronico.setBounds(294, 78, 89, 23);
-		panel.add(openJanelaEletronico);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Eletronico", "Vestiario", "Alimenticio"}));
+
+
+		JComboBox<Object> comboBox = new JComboBox<Object>();
+		comboBox.setModel(new DefaultComboBoxModel<Object>(new String[] {"Eletronico", "Vestiario", "Alimenticio"}));
 		comboBox.setFont(new Font("Tahoma", Font.BOLD, 13));
 		comboBox.setBounds(58, 78, 224, 34);
-		panel.add(comboBox);
+		Adicionar.add(comboBox);
 		
+		JButton openJanelaEletronico = new JButton("Aceitar");
+		openJanelaEletronico.setSelectedIcon(null);
+		openJanelaEletronico.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				switch(comboBox.getSelectedItem().toString()) {
+					case "Eletronico":
+						EletronicoFrame EletronicoJanele = new EletronicoFrame();
+						EletronicoJanele.setVisible(true);
+						break;
+					case "Vestiario":
+						VestiarioFrame VestiarioJanele = new VestiarioFrame();
+						VestiarioJanele.setVisible(true);
+						break;
+				}
+				
+				
+			}
+		});
+		openJanelaEletronico.setBounds(292, 78, 89, 34);
+		Adicionar.add(openJanelaEletronico);
 		
-		JPanel panel_1 = new JPanel();
-		tabbedPane_1.addTab("Vestuario", null, panel_1, null);
+		JPanel Remover = new JPanel();
+		tabbedPane_1.addTab("Remover", null, Remover, null);
 		
-		JPanel panel_3 = new JPanel();
-		tabbedPane_1.addTab("RESULTADOS", null, panel_3, null);
+		JPanel Resultados = new JPanel();
+		tabbedPane_1.addTab("Resultados", null, Resultados, null);
 	}
 }
