@@ -171,7 +171,7 @@ public class Main {
 						}
 						System.out.println("-----------------------");
 						
-						System.out.println("\n\n\n------VALOR ESTOQUE-------");
+						System.out.println("\n\n------VALOR ESTOQUE-------");
 						System.out.println("Eletronico:"+valorTotalEletronico);
 						System.out.println("Vestiario:"+valorTotalVestiario);
 						System.out.println("Alimenticio:"+valorTotalAlimenticio);

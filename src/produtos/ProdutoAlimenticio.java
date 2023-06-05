@@ -19,6 +19,4 @@ public class ProdutoAlimenticio extends Produto{
 		this.dataValidade = dataValidade;
 	}
 	
-	
-	
 }
