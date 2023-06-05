@@ -122,36 +122,60 @@ public class Main {
 					break;
 				case "lista":
 					
+						int idItem=0;
+					
+						float valorTotalEletronico=0;
 						//Lista produto ELÊTRONICOS
 						System.out.println("-PRODUTOS ELÊTRONICOS-");
 						for(ProdutoEletronico i : produtosEletronico) {
-							System.out.println("Codigo:"+i.getCodigo()+"\n"+
+							System.out.println("ID:"+idItem+"\n"+
+												"Codigo:"+i.getCodigo()+"\n"+
 												"Nome:"+i.getNome()+"\n"+
 												"Preço:"+i.getPreco()+"\n"+
 												"Marca:"+i.getMarca());
+							
+							valorTotalEletronico+=i.getPreco();
+							idItem++;
 						}
-						System.out.println("-----------------------\n"+produtosEletronico.size());
+						System.out.println("-----------------------");
 						
+						idItem=0;
+						
+						float valorTotalVestiario=0;
 						//Lista produto VESTUARIO
 						System.out.println("-PRODUTOS VESTUARIO-");
 						for(ProdutoVestuario i : produtosVestuario) {
-							System.out.println("Codigo:"+i.getCodigo()+"\n"+
+							System.out.println("ID:"+idItem+"\n"+
+												"Codigo:"+i.getCodigo()+"\n"+
 												"Nome:"+i.getNome()+"\n"+
 												"Preço:"+i.getPreco()+"\n"+
 												"Tamanho:"+i.getTamanho());
+							valorTotalVestiario+=i.getPreco();
+							idItem++;
 						}
 						System.out.println("-----------------------");
 						
+						idItem=0;
 						
+						float valorTotalAlimenticio=0;
 						//Lista produto Alimenticio
 						System.out.println("-PRODUTOS ALIMENTICIO-");
 						for(ProdutoAlimenticio i : produtosAlimenticio) {
-							System.out.println("Codigo:"+i.getCodigo()+"\n"+
+							System.out.println("ID:"+idItem+"\n"+
+												"Codigo:"+i.getCodigo()+"\n"+
 												"Nome:"+i.getNome()+"\n"+
 												"Preço:"+i.getPreco()+"\n"+
 												"Data Validade:"+i.getDataValidade().getTime());
+							valorTotalAlimenticio+=i.getPreco();
+							idItem++;
 						}
 						System.out.println("-----------------------");
+						
+						System.out.println("\n\n\n------VALOR ESTOQUE-------");
+						System.out.println("Eletronico:"+valorTotalEletronico);
+						System.out.println("Vestiario:"+valorTotalVestiario);
+						System.out.println("Alimenticio:"+valorTotalAlimenticio);
+						
 					break;
 			}
 			
