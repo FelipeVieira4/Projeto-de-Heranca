@@ -15,16 +15,17 @@ public class Main {
 		ArrayList<ProdutoAlimenticio> produtosAlimenticio = new ArrayList<ProdutoAlimenticio>();
 		
 		String commmand = null;
-		Scanner scan = new Scanner(System.in);
+		Scanner scan;
 		
 		do {
-			System.out.println("Commandos add, remover e lista");
+			scan=new Scanner(System.in);
+			System.out.println("\nCommandos add, remover e lista\n");
 			commmand=scan.nextLine();
 			
 			
 			switch(commmand) {
 				case "add":
-					System.out.println("Escolha um tipo de produto\nEletronico\nVestuario\nAlimenticio");
+					System.out.println("Escolha um tipo de produto\nEletronico\nVestuario\nAlimenticio\n");
 					String tipoProduto=scan.nextLine();
 					switch(tipoProduto) {
 						case "Eletronico":
@@ -90,31 +91,38 @@ public class Main {
 					
 					break;
 				case "remover":
-						System.out.println("Digite posicao do item a ser removido:");
+						System.out.println("\nDigite posicao do item a ser removido:");
 						int itemID=scan.nextInt();
-					
-					
-						System.out.println("Escolha um tipo de produto\nEletronico\nVestuario\nAlimenticio");
-						String tipoProdutoRem=scan.nextLine();
-						switch(tipoProdutoRem) {
-							case "Eletronico":
-								if(itemID<produtosEletronico.size())
-									produtosEletronico.remove(itemID);
-								
-								break;
-							case "Vestuario":
-								if(itemID<produtosVestuario.size())
-									produtosVestuario.remove(itemID);
-								
-								break;
-							case "Alimenticio":
-								if(itemID<produtosAlimenticio.size())
-									produtosAlimenticio.remove(itemID);
-								
-								break;
+						scan = new Scanner(System.in);
+						
+						if(itemID<0) System.out.println("Número tem quer ser maior ou igual a 0");
+						else {
+							System.out.println("Escolha um tipo de produto\nEletronico\nVestuario\nAlimenticio");
+							String tipoProdutoRem=scan.nextLine();
+														
+								switch(tipoProdutoRem) {
+									case "Eletronico":
+										if(itemID<produtosEletronico.size())
+											produtosEletronico.remove(itemID);
+										
+										break;
+									case "Vestuario":
+										if(itemID<produtosVestuario.size())
+											produtosVestuario.remove(itemID);
+										
+										break;
+									case "Alimenticio":
+										if(itemID<produtosAlimenticio.size())
+											produtosAlimenticio.remove(itemID);
+										
+										break;
+								}
 						}
+						
 					break;
 				case "lista":
+					
+						//Lista produto ELÊTRONICOS
 						System.out.println("-PRODUTOS ELÊTRONICOS-");
 						for(ProdutoEletronico i : produtosEletronico) {
 							System.out.println("Codigo:"+i.getCodigo()+"\n"+
@@ -122,7 +130,9 @@ public class Main {
 												"Preço:"+i.getPreco()+"\n"+
 												"Marca:"+i.getMarca());
 						}
+						System.out.println("-----------------------\n"+produtosEletronico.size());
 						
+						//Lista produto VESTUARIO
 						System.out.println("-PRODUTOS VESTUARIO-");
 						for(ProdutoVestuario i : produtosVestuario) {
 							System.out.println("Codigo:"+i.getCodigo()+"\n"+
@@ -130,14 +140,18 @@ public class Main {
 												"Preço:"+i.getPreco()+"\n"+
 												"Tamanho:"+i.getTamanho());
 						}
+						System.out.println("-----------------------");
 						
-						System.out.println("-PRODUTOS Alimenticio-");
+						
+						//Lista produto Alimenticio
+						System.out.println("-PRODUTOS ALIMENTICIO-");
 						for(ProdutoAlimenticio i : produtosAlimenticio) {
 							System.out.println("Codigo:"+i.getCodigo()+"\n"+
 												"Nome:"+i.getNome()+"\n"+
 												"Preço:"+i.getPreco()+"\n"+
-												"Marca:"+i.getDataValidade());
+												"Data Validade:"+i.getDataValidade().getTime());
 						}
+						System.out.println("-----------------------");
 					break;
 			}
 			
