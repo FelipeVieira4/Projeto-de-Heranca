@@ -19,7 +19,7 @@ public class Main {
 		
 		do {
 			scan=new Scanner(System.in);
-			System.out.println("\nCommandos add, remover e lista\n");
+			System.out.println("\nCommandos add, remover, lista e sair\n");
 			commmand=scan.nextLine();
 			
 			
@@ -36,8 +36,11 @@ public class Main {
 							System.out.println("Nome Produto");
 							String nomeEle =scan.nextLine();
 							
-							System.out.println("Preço Produto");
-							float precoEle=scan.nextFloat();
+							float precoEle;
+							do {
+								System.out.println("Preço Produto");
+								precoEle=scan.nextFloat();
+							}while(precoEle<=0);
 	
 							scan= new Scanner(System.in);
 							
@@ -54,8 +57,11 @@ public class Main {
 							System.out.println("Nome Produto");
 							String nomeVes =scan.nextLine();
 							
-							System.out.println("Preço Produto");
-							float precoVes =scan.nextFloat();
+							float precoVes;
+							do {
+								System.out.println("Preço Produto");
+								precoVes =scan.nextFloat();
+							}while(precoVes<=0);
 							
 							scan= new Scanner(System.in);
 							
@@ -72,8 +78,11 @@ public class Main {
 							System.out.println("Nome Produto");
 							String nomeAli =scan.nextLine();
 							
-							System.out.println("Preço Produto");
-							float precoAli =scan.nextFloat();
+							float precoAli;
+							do {
+								System.out.println("Preço Produto");
+								precoAli=scan.nextFloat();
+							}while(precoAli<=0);
 							
 							scan= new Scanner(System.in);
 							
@@ -87,6 +96,8 @@ public class Main {
 							
 							produtosAlimenticio.add(new ProdutoAlimenticio(codigoAli,nomeAli,precoAli,calendar));
 							break;
+							default:
+								System.out.println("Tipo não encontado");
 					}
 					
 					break;
@@ -116,6 +127,8 @@ public class Main {
 											produtosAlimenticio.remove(itemID);
 										
 										break;
+									default:
+										System.out.println("Tipo não encontado");
 								}
 						}
 						
