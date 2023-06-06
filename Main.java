@@ -19,7 +19,7 @@ public class Main {
 		
 		do {
 			scan=new Scanner(System.in);
-			System.out.println("\nCommandos add, remover e lista\n");
+			System.out.println("\nCommandos add, remover, lista e sair\n");
 			commmand=scan.nextLine();
 			
 			
