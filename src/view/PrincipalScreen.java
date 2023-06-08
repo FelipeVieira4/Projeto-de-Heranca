@@ -48,14 +48,14 @@ public class PrincipalScreen extends JFrame {
 		tabbedPane.setBounds(10, 11, 606, 363);
 		contentPane.add(tabbedPane);
 		
-		JPanel cadastroPane = new JPanel();
-		tabbedPane.addTab("Cadastro", null, cadastroPane, null);
+		JPanel compraPane = new JPanel();
+		tabbedPane.addTab("Compra Produto", null, compraPane, null);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		cadastroPane.add(lblNewLabel);
+		compraPane.add(lblNewLabel);
 		
-		JPanel buscarPane = new JPanel();
-		tabbedPane.addTab("Buscar", null, buscarPane, null);
+		JPanel cadatroProdutoPane = new JPanel();
+		tabbedPane.addTab("Cadastro Produto", null, cadatroProdutoPane, null);
 		
 		JPanel panel_2 = new JPanel();
 		tabbedPane.addTab("New tab", null, panel_2, null);
